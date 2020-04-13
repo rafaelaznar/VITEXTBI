@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myVitextbiAngularApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta property="og:title" content="VITEXTBI">
+    <meta property="og:description" content="A texts classifier">
+    <meta property="og:image" content="https://vitextbi.netlify.com/thumbnail.jpg">
+    <meta property="og:url" content="https://vitextbi.netlify.com/">
+    <meta property="og:site_name" content="VITEXTBI">
+    <meta name="author" content="Rafael Aznar" />
+    <meta name="description" content="A texts classifier & generator" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <script src="angular.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <title>VITEXTBI</title>
+    <link rel="shortcut icon" type="image/png" href="vitextbi.png" />
+</head>
+
+<body ng-controller="myVitextbiController" style="margin-top: 20px;">
+
+    <div class="container" ng-cloak>
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 text-center">
+                <img src="vitextbi.png" alt="vitextbi logo" width="72" height="72">
+                <h2>VITEXTBI</h2>
+                <p>A texts classifier & generator</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 text-center">
+                <div class="custom-file">
+                    <label class="btn btn-primary" ng-click="clear()" for="inputFileTxt"
+                        style="border: 1px solid #ccc;display: inline-block;padding: 6px 12px;cursor: pointer;">
+                        <input type="file" files-input ng-model="fileArray" ng-change="onTextFileChange()" multiple
+                            id="inputFileTxt" style="display: none">
+                        <img src="file.svg" fill="white" alt="" width="20"
+                            style="filter: invert(1);margin: 0 0.5em ;">Load sample txt file
+                    </label>
+                    <label class="btn btn-primary" ng-click="clear()" for="inputFileTxt3"
+                        style="border: 1px solid #ccc;display: inline-block;padding: 6px 12px;cursor: pointer;">
+                        <input type="file" files-input ng-model="fileArray3" ng-change="onFTableFileChange()" multiple
+                            id="inputFileTxt3" style="display: none"><img src="table.svg" fill="white" alt="" width="20"
+                            style="filter: invert(1);margin: 0 0.5em ;">Load sample freq file
+                    </label>
+                    <label class="btn btn-primary" ng-click="clear()" for="inputFileTxt2"
+                        style="border: 1px solid #ccc;display: inline-block;padding: 6px 12px;cursor: pointer;">
+                        <input type="file" files-input ng-model="fileArray2" ng-change="onTestFileChange()" multiple
+                            id="inputFileTxt2" style="display: none"><img src="check.svg" fill="white" alt="" width="20"
+                            style="filter: invert(1);margin: 0 0.5em ;">Load test txt file
+                    </label>
+                </div>
+                <div style="margin-top: 10px;">
+                    <button ng-show="status!='initial'" type="button" class="btn btn-danger btn-lg center-block"
+                        id="reset" ng-click="reset()"> <img src="refresh-ccw.svg" fill="white" alt="" width="20"
+                            style="filter: invert(1);">RESET
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-md-12">
+                <div ng-show="textFileContents.length>0">
+                    <h2 style="padding: 15px; color: rgb(0, 0, 77); background-color: rgb(240, 240, 240);">Text Files
+                    </h2>
+                    <div class="row">
+                        <div class="col-md-2" data-placement="top" ng-attr-title="{{txtNeighborhoodExp[language]}}"
+                            style="margin-top:20px">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch1"
+                                    ng-model="checkboxCharWord" ng-false-value="'C'" ng-true-value="'W'">
+                                <label class="custom-control-label" for="customSwitch1"
+                                    ng-show="checkboxCharWord=='C'">CHAR MODE</label>
+                                <label class="custom-control-label" for="customSwitch1"
+                                    ng-show="checkboxCharWord=='W'">WORD MODE</label>
+                            </div>
+                        </div>
+                        <div class="col-md-5" data-placement="top" ng-attr-title="First Table Dimension Entries"
+                            style="margin-top:20px">
+                            Range1: <span>{{range1}}</span>
+                            <input type="range" class="custom-range" ng-attr-min="1" ng-attr-max="5" ng-attr-step="1"
+                                ng-model="range1">
+                        </div>
+                        <div class="col-md-5" data-placement="top" ng-attr-title="Second Table Dimension Entries"
+                            style="margin-top:20px">
+                            Range2: <span>{{range2}}</span>
+                            <input type="range" class="custom-range" ng-attr-min="1" ng-attr-max="5" ng-attr-step="1"
+                                ng-model="range2">
+                        </div>
+                    </div>
+                    <table class="table table-bordered table-sm">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Content</th>
+                            <th>Size</th>
+                            <th>Frequency Table</th>
+                            <th>Operations</th>
+                        </tr>
+                        <tr ng-repeat="f in textFileContents">
+                            <td> <img src="file.svg" fill="white" alt="" width="20" style="margin: 0 0.5em ;">
+                                {{$index}} </td>
+                            <td> {{f.name}} </td>
+                            <td> {{f.type}} </td>
+                            <td> {{f.textContent|clipstring}} </td>
+                            <td> {{f.size}} ({{f.textContent.length}} char) </td>
+                            <td>
+                                <span ng-show="!f.fTable">Not generated yet</span>
+                                <span ng-show="f.fTable">Dimensions: {{f.fTable.length}}x{{f.fTable[0].length}}
+                                    Type:
+                                    {{f.fTable[0][0]}}</span>
+                            </td>
+                            <td>
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <button id="btnGroupDrop2" type="button" class="btn btn-secondary dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img src="cog.svg" width="20"
+                                            style="filter: invert(1);margin: 0 0.5em ;">Actions
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop2">
+                                        <a class="dropdown-item" ng-show="!f.fTable"
+                                            ng-click="buildTable($index,checkboxCharWord + range1 + range2 )">
+                                            <img src="table.svg" width="20" style="margin: 0 0.5em ;">
+                                            Build Frequency Table</a>
+
+                                        <a class="dropdown-item" ng-show="f.fTable" ng-click="saveFGraph($index)">
+                                            <img src="save.svg" width="20" style="margin: 0 0.5em ;">
+                                            Save Table</a>
+
+                                        <a class="dropdown-item" ng-show="f.fTable" ng-click="generateText(f.fTable)">
+                                            <img src="edit.svg" width="20" style="margin: 0 0.5em ;">
+                                            Generate text</a>
+
+                                        <a class="dropdown-item" ng-show="f.fTable"
+                                            ng-click="removeFTableFromText($index)">
+                                            <img src="trash.svg" width="20" style="margin: 0 0.5em ;">
+                                            Remove Table</a>
+
+                                        <a class="dropdown-item" ng-click="removeTextFromLoadedTexts($index)">
+                                            <img src="trash.svg" width="20" style="margin: 0 0.5em ;">
+                                            Remove Text</a>
+
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div ng-show="fTableFileContents.length>0">
+                    <h2 style="padding: 15px; color: rgb(0, 0, 77); background-color: rgb(240, 240, 240);">Frequency
+                        Table Files</h2>
+                    <table class="table table-bordered table-sm">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Table size</th>
+                            <th>Operations</th>
+                        </tr>
+                        <tr ng-repeat="f in fTableFileContents">
+                            <td> <img src="table.svg" fill="white" alt="" width="20"
+                                    style="margin: 0 0.5em ;">{{$index}} </td>
+                            <td> {{f.name}} </td>
+                            <td> {{f.type}} </td>
+                            <td> {{f.fTable.length}}x{{f.fTable[0].length}} </td>
+                            <td>
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <button id="btnGroupDrop2" type="button" class="btn btn-secondary dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img src="cog.svg" width="20"
+                                            style="filter: invert(1);margin: 0 0.5em ;">Actions
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop2">
+                                        <a class="dropdown-item" ng-show="f.fTable" ng-click="generateText(f.fTable)">
+                                            <img src="edit.svg" width="20" style="margin: 0 0.5em ;">
+                                            Generate Text</a>
+
+                                        <a class="dropdown-item" ng-click="removeFtableFromFTables($index)">
+                                            <img src="trash.svg" width="20" style="margin: 0 0.5em ;">
+                                            Remove Table</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div ng-show="testFileContents.length>0">
+                    <h2 style="padding: 15px; color: rgb(0, 0, 77); background-color: rgb(240, 240, 240);">Test Files
+                    </h2>
+                    <table class="table table-bordered table-sm">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Content</th>
+                            <th>Size</th>
+                            <th>Results</th>
+                            <th>Operations</th>
+                        </tr>
+                        <tr ng-repeat="f in testFileContents">
+                            <td> <img src="check.svg" fill="white" alt="" width="20"
+                                    style="margin: 0 0.5em ;">{{$index}} </td>
+                            <td> {{f.name}} </td>
+                            <td> {{f.type}} </td>
+                            <td> {{f.textContent|clipstring}} </td>
+                            <td> {{f.size}} ({{f.textContent.length}} char) </td>
+                            <td>
+                                <table class="table table-bordered">
+                                    <tr class="table table-sm" ng-repeat="f in testFileContents[$index].prob">
+                                        <td>{{f.number}}</td>
+                                        <td>{{f.name}}</td>
+                                        <td>{{f.prob|number:4}}</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td>
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <button id="btnGroupDrop2" type="button" class="btn btn-secondary dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img src="cog.svg" width="20"
+                                            style="filter: invert(1);margin: 0 0.5em ;">Actions
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop2">
+                                        <a class="dropdown-item" ng-click="identifyText($index)">
+                                            <img src="cogs.svg" width="20" style="margin: 0 0.5em ;">
+                                            Test Text</a>
+                                        <a class="dropdown-item" ng-click="removeTestText($index)">
+                                            <img src="trash.svg" width="20" style="margin: 0 0.5em ;">Remove Text</a>
+                                    </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row" ng-show="!generatedText==''">
+            <div class="col-xl-12 col-lg-12 col-md-12">
+                <h2 style="padding: 15px; color: rgb(0, 0, 77); background-color: rgb(240, 240, 240);">Generated text
+                </h2>
+                {{generatedText}}
+            </div>
+            <div class="col-md-12 text-center" ng-show="!generatedText==''" style="margin-top: 10px;">
+                <button type="button" class="btn btn-danger btn-lg center-block" id="testText"
+                    ng-click="clearGeneratedText()">
+                    <img src="refresh-ccw.svg" fill="white" alt="" width="20" style="filter: invert(1);"> CLEAR
+                    Generated Text</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="font-size: 80%;text-align:center;font-family:Noto,Sans,serif,Times;
+            font-weight:600;font-stretch:expanded;color: grey;margin:60px auto;">
+                VITEXTBI: Designed and built by Rafael Aznar (rafaaznar {at} gmail {dot} com) (@rafaelaznar)<br />
+                This code does not use cookies, does not contain ads nor track or spy on you.<br />
+                &copy; MIT licensed project, sources @ https://github.com/rafaelaznar/vitextbi
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
