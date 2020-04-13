@@ -513,7 +513,7 @@ var myController = myModule.controller("myVitextbiController", [
           {
             "number": i,
             "name": f1[i].name,
-            "prob": getProbC(testFC.textContent, f1[i].fTable, 1, fchar1, fchar2)
+            "prob": getProbC(testFC.textContent, f1[i].fTable, 2, fchar1, fchar2)
           });
       }
       if (f1[i].fTable[0][0] == "C22") {
@@ -523,7 +523,7 @@ var myController = myModule.controller("myVitextbiController", [
           {
             "number": i,
             "name": f1[i].name,
-            "prob": getProbC(testFC.textContent, f1[i].fTable, 2, fchar1, fchar2)
+            "prob": getProbC(testFC.textContent, f1[i].fTable, 3, fchar1, fchar2)
           });
       }
       if (f1[i].fTable[0][0] == "C32") {
@@ -533,7 +533,7 @@ var myController = myModule.controller("myVitextbiController", [
           {
             "number": i,
             "name": f1[i].name,
-            "prob": getProbC(testFC.textContent, f1[i].fTable, 3, fchar1, fchar2)
+            "prob": getProbC(testFC.textContent, f1[i].fTable, 4, fchar1, fchar2)
           });
       }
       if (f1[i].fTable[0][0] == "C42") {
@@ -543,7 +543,7 @@ var myController = myModule.controller("myVitextbiController", [
           {
             "number": i,
             "name": f1[i].name,
-            "prob": getProbC(testFC.textContent, f1[i].fTable, 4, fchar1, fchar2)
+            "prob": getProbC(testFC.textContent, f1[i].fTable, 5, fchar1, fchar2)
           });
       }
       if (f1[i].fTable[0][0] == "C52") {
@@ -553,7 +553,7 @@ var myController = myModule.controller("myVitextbiController", [
           {
             "number": i,
             "name": f1[i].name,
-            "prob": getProbC(testFC.textContent, f1[i].fTable, 5, fchar1, fchar2)
+            "prob": getProbC(testFC.textContent, f1[i].fTable, 6, fchar1, fchar2)
           });
       }
 
@@ -565,7 +565,7 @@ var myController = myModule.controller("myVitextbiController", [
           {
             "number": i,
             "name": f1[i].name,
-            "prob": getProbC(testFC.textContent, f1[i].fTable, 1, fchar1, fchar2)
+            "prob": getProbC(testFC.textContent, f1[i].fTable, 3, fchar1, fchar2)
           });
       }
       if (f1[i].fTable[0][0] == "C23") {
@@ -575,7 +575,7 @@ var myController = myModule.controller("myVitextbiController", [
           {
             "number": i,
             "name": f1[i].name,
-            "prob": getProbC(testFC.textContent, f1[i].fTable, 2, fchar1, fchar2)
+            "prob": getProbC(testFC.textContent, f1[i].fTable, 4, fchar1, fchar2)
           });
       }
       if (f1[i].fTable[0][0] == "C33") {
@@ -585,7 +585,7 @@ var myController = myModule.controller("myVitextbiController", [
           {
             "number": i,
             "name": f1[i].name,
-            "prob": getProbC(testFC.textContent, f1[i].fTable, 3, fchar1, fchar2)
+            "prob": getProbC(testFC.textContent, f1[i].fTable, 5, fchar1, fchar2)
           });
       }
       if (f1[i].fTable[0][0] == "C43") {
@@ -595,7 +595,7 @@ var myController = myModule.controller("myVitextbiController", [
           {
             "number": i,
             "name": f1[i].name,
-            "prob": getProbC(testFC.textContent, f1[i].fTable, 4, fchar1, fchar2)
+            "prob": getProbC(testFC.textContent, f1[i].fTable, 6, fchar1, fchar2)
           });
       }
       if (f1[i].fTable[0][0] == "C53") {
@@ -605,7 +605,7 @@ var myController = myModule.controller("myVitextbiController", [
           {
             "number": i,
             "name": f1[i].name,
-            "prob": getProbC(testFC.textContent, f1[i].fTable, 5, fchar1, fchar2)
+            "prob": getProbC(testFC.textContent, f1[i].fTable, 7, fchar1, fchar2)
           });
       }
       //--
@@ -616,7 +616,7 @@ var myController = myModule.controller("myVitextbiController", [
           {
             "number": i,
             "name": f1[i].name,
-            "prob": getProbC(testFC.textContent, f1[i].fTable, 1, fchar1, fchar2)
+            "prob": getProbC(testFC.textContent, f1[i].fTable, 4, fchar1, fchar2)
           });
       }
       if (f1[i].fTable[0][0] == "C24") {
@@ -626,7 +626,7 @@ var myController = myModule.controller("myVitextbiController", [
           {
             "number": i,
             "name": f1[i].name,
-            "prob": getProbC(testFC.textContent, f1[i].fTable, 2, fchar1, fchar2)
+            "prob": getProbC(testFC.textContent, f1[i].fTable, 5, fchar1, fchar2)
           });
       }
       if (f1[i].fTable[0][0] == "C34") {
@@ -636,7 +636,7 @@ var myController = myModule.controller("myVitextbiController", [
           {
             "number": i,
             "name": f1[i].name,
-            "prob": getProbC(testFC.textContent, f1[i].fTable, 3, fchar1, fchar2)
+            "prob": getProbC(testFC.textContent, f1[i].fTable, 6, fchar1, fchar2)
           });
       }
       if (f1[i].fTable[0][0] == "C44") {
@@ -646,7 +646,7 @@ var myController = myModule.controller("myVitextbiController", [
           {
             "number": i,
             "name": f1[i].name,
-            "prob": getProbC(testFC.textContent, f1[i].fTable, 4, fchar1, fchar2)
+            "prob": getProbC(testFC.textContent, f1[i].fTable, 7, fchar1, fchar2)
           });
       }
       if (f1[i].fTable[0][0] == "C54") {
@@ -656,7 +656,7 @@ var myController = myModule.controller("myVitextbiController", [
           {
             "number": i,
             "name": f1[i].name,
-            "prob": getProbC(testFC.textContent, f1[i].fTable, 5, fchar1, fchar2)
+            "prob": getProbC(testFC.textContent, f1[i].fTable, 8, fchar1, fchar2)
           });
       }
       //--
@@ -667,7 +667,7 @@ var myController = myModule.controller("myVitextbiController", [
           {
             "number": i,
             "name": f1[i].name,
-            "prob": getProbC(testFC.textContent, f1[i].fTable, 1, fchar1, fchar2)
+            "prob": getProbC(testFC.textContent, f1[i].fTable, 5, fchar1, fchar2)
           });
       }
       if (f1[i].fTable[0][0] == "C25") {
@@ -677,7 +677,7 @@ var myController = myModule.controller("myVitextbiController", [
           {
             "number": i,
             "name": f1[i].name,
-            "prob": getProbC(testFC.textContent, f1[i].fTable, 2, fchar1, fchar2)
+            "prob": getProbC(testFC.textContent, f1[i].fTable, 6, fchar1, fchar2)
           });
       }
       if (f1[i].fTable[0][0] == "C35") {
@@ -687,7 +687,7 @@ var myController = myModule.controller("myVitextbiController", [
           {
             "number": i,
             "name": f1[i].name,
-            "prob": getProbC(testFC.textContent, f1[i].fTable, 3, fchar1, fchar2)
+            "prob": getProbC(testFC.textContent, f1[i].fTable, 7, fchar1, fchar2)
           });
       }
       if (f1[i].fTable[0][0] == "C45") {
@@ -697,7 +697,7 @@ var myController = myModule.controller("myVitextbiController", [
           {
             "number": i,
             "name": f1[i].name,
-            "prob": getProbC(testFC.textContent, f1[i].fTable, 4, fchar1, fchar2)
+            "prob": getProbC(testFC.textContent, f1[i].fTable, 8, fchar1, fchar2)
           });
       }
       if (f1[i].fTable[0][0] == "C55") {
@@ -707,9 +707,10 @@ var myController = myModule.controller("myVitextbiController", [
           {
             "number": i,
             "name": f1[i].name,
-            "prob": getProbC(testFC.textContent, f1[i].fTable, 5, fchar1, fchar2)
+            "prob": getProbC(testFC.textContent, f1[i].fTable, 9, fchar1, fchar2)
           });
       }
+      //--
       //--
       if (f1[i].fTable[0][0] == "W11") {
         var fword1 = function (str, i) { return str[i].toLowerCase() };
@@ -739,6 +740,230 @@ var myController = myModule.controller("myVitextbiController", [
             "number": i,
             "name": f1[i].name,
             "prob": getProbW(testFC.textContent, f1[i].fTable, 3, fword1, fword2)
+          });
+      }
+      if (f1[i].fTable[0][0] == "W41") {
+        var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() };
+        var fword2 = function (str, i) { return str[i + 4].toLowerCase() };
+        testFC.prob.push(
+          {
+            "number": i,
+            "name": f1[i].name,
+            "prob": getProbW(testFC.textContent, f1[i].fTable, 4, fword1, fword2)
+          });
+      }
+      if (f1[i].fTable[0][0] == "W51") {
+        var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() };
+        var fword2 = function (str, i) { return str[i + 5].toLowerCase() };
+        testFC.prob.push(
+          {
+            "number": i,
+            "name": f1[i].name,
+            "prob": getProbW(testFC.textContent, f1[i].fTable, 5, fword1, fword2)
+          });
+      }
+      //--
+      if (f1[i].fTable[0][0] == "W12") {
+        var fword1 = function (str, i) { return str[i].toLowerCase() };
+        var fword2 = function (str, i) { return str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() };
+        testFC.prob.push(
+          {
+            "number": i,
+            "name": f1[i].name,
+            "prob": getProbW(testFC.textContent, f1[i].fTable, 2, fword1, fword2)
+          });
+      }
+      if (f1[i].fTable[0][0] == "W22") {
+        var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() };
+        var fword2 = function (str, i) { return str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() };
+        testFC.prob.push(
+          {
+            "number": i,
+            "name": f1[i].name,
+            "prob": getProbW(testFC.textContent, f1[i].fTable, 3, fword1, fword2)
+          });
+      }
+      if (f1[i].fTable[0][0] == "W32") {
+        var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() };
+        var fword2 = function (str, i) { return str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() };
+        testFC.prob.push(
+          {
+            "number": i,
+            "name": f1[i].name,
+            "prob": getProbW(testFC.textContent, f1[i].fTable, 4, fword1, fword2)
+          });
+      }
+      if (f1[i].fTable[0][0] == "W42") {
+        var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() };
+        var fword2 = function (str, i) { return str[i + 4].toLowerCase() + " " + str[i + 5].toLowerCase() };
+        testFC.prob.push(
+          {
+            "number": i,
+            "name": f1[i].name,
+            "prob": getProbW(testFC.textContent, f1[i].fTable, 5, fword1, fword2)
+          });
+      }
+      if (f1[i].fTable[0][0] == "W52") {
+        var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() };
+        var fword2 = function (str, i) { return str[i + 5].toLowerCase() + " " + str[i + 6].toLowerCase() };
+        testFC.prob.push(
+          {
+            "number": i,
+            "name": f1[i].name,
+            "prob": getProbW(testFC.textContent, f1[i].fTable, 6, fword1, fword2)
+          });
+      }
+      //--
+      if (f1[i].fTable[0][0] == "W13") {
+        var fword1 = function (str, i) { return str[i].toLowerCase() };
+        var fword2 = function (str, i) { return str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() };
+        testFC.prob.push(
+          {
+            "number": i,
+            "name": f1[i].name,
+            "prob": getProbW(testFC.textContent, f1[i].fTable, 3, fword1, fword2)
+          });
+      }
+      if (f1[i].fTable[0][0] == "W23") {
+        var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() };
+        var fword2 = function (str, i) { return str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() };
+        testFC.prob.push(
+          {
+            "number": i,
+            "name": f1[i].name,
+            "prob": getProbW(testFC.textContent, f1[i].fTable, 4, fword1, fword2)
+          });
+      }
+      if (f1[i].fTable[0][0] == "W33") {
+        var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() };
+        var fword2 = function (str, i) { return str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() + " " + str[i + 5].toLowerCase() };
+        testFC.prob.push(
+          {
+            "number": i,
+            "name": f1[i].name,
+            "prob": getProbW(testFC.textContent, f1[i].fTable, 5, fword1, fword2)
+          });
+      }
+      if (f1[i].fTable[0][0] == "W43") {
+        var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() };
+        var fword2 = function (str, i) { return str[i + 4].toLowerCase() + " " + str[i + 5].toLowerCase() + " " + str[i + 6].toLowerCase() };
+        testFC.prob.push(
+          {
+            "number": i,
+            "name": f1[i].name,
+            "prob": getProbW(testFC.textContent, f1[i].fTable, 6, fword1, fword2)
+          });
+      }
+      if (f1[i].fTable[0][0] == "W53") {
+        var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() };
+        var fword2 = function (str, i) { return str[i + 5].toLowerCase() + " " + str[i + 6].toLowerCase() + " " + str[i + 7].toLowerCase() };
+        testFC.prob.push(
+          {
+            "number": i,
+            "name": f1[i].name,
+            "prob": getProbW(testFC.textContent, f1[i].fTable, 7, fword1, fword2)
+          });
+      }
+      //--
+      if (f1[i].fTable[0][0] == "W14") {
+        var fword1 = function (str, i) { return str[i].toLowerCase() };
+        var fword2 = function (str, i) { return str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() };
+        testFC.prob.push(
+          {
+            "number": i,
+            "name": f1[i].name,
+            "prob": getProbW(testFC.textContent, f1[i].fTable, 4, fword1, fword2)
+          });
+      }
+      if (f1[i].fTable[0][0] == "W24") {
+        var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() };
+        var fword2 = function (str, i) { return str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() + " " + str[i + 5].toLowerCase() };
+        testFC.prob.push(
+          {
+            "number": i,
+            "name": f1[i].name,
+            "prob": getProbW(testFC.textContent, f1[i].fTable, 5, fword1, fword2)
+          });
+      }
+      if (f1[i].fTable[0][0] == "W34") {
+        var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() };
+        var fword2 = function (str, i) { return str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() + " " + str[i + 5].toLowerCase() + " " + str[i + 6].toLowerCase() };
+        testFC.prob.push(
+          {
+            "number": i,
+            "name": f1[i].name,
+            "prob": getProbW(testFC.textContent, f1[i].fTable, 6, fword1, fword2)
+          });
+      }
+      if (f1[i].fTable[0][0] == "W44") {
+        var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() };
+        var fword2 = function (str, i) { return str[i + 4].toLowerCase() + " " + str[i + 5].toLowerCase() + " " + str[i + 6].toLowerCase() + " " + str[i + 7].toLowerCase() };
+        testFC.prob.push(
+          {
+            "number": i,
+            "name": f1[i].name,
+            "prob": getProbW(testFC.textContent, f1[i].fTable, 7, fword1, fword2)
+          });
+      }
+      if (f1[i].fTable[0][0] == "W54") {
+        var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() };
+        var fword2 = function (str, i) { return str[i + 5].toLowerCase() + " " + str[i + 6].toLowerCase() + " " + str[i + 7].toLowerCase() + " " + str[i + 8].toLowerCase() };
+        testFC.prob.push(
+          {
+            "number": i,
+            "name": f1[i].name,
+            "prob": getProbW(testFC.textContent, f1[i].fTable, 8, fword1, fword2)
+          });
+      }
+      //--
+      if (f1[i].fTable[0][0] == "W15") {
+        var fword1 = function (str, i) { return str[i].toLowerCase() };
+        var fword2 = function (str, i) { return str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() + " " + str[i + 5].toLowerCase() };
+        testFC.prob.push(
+          {
+            "number": i,
+            "name": f1[i].name,
+            "prob": getProbW(testFC.textContent, f1[i].fTable, 5, fword1, fword2)
+          });
+      }
+      if (f1[i].fTable[0][0] == "W25") {
+        var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() };
+        var fword2 = function (str, i) { return str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() + " " + str[i + 5].toLowerCase() + " " + str[i + 6].toLowerCase() };
+        testFC.prob.push(
+          {
+            "number": i,
+            "name": f1[i].name,
+            "prob": getProbW(testFC.textContent, f1[i].fTable, 6, fword1, fword2)
+          });
+      }
+      if (f1[i].fTable[0][0] == "W35") {
+        var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() };
+        var fword2 = function (str, i) { return str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() + " " + str[i + 5].toLowerCase() + " " + str[i + 6].toLowerCase() + " " + str[i + 7].toLowerCase() };
+        testFC.prob.push(
+          {
+            "number": i,
+            "name": f1[i].name,
+            "prob": getProbW(testFC.textContent, f1[i].fTable, 7, fword1, fword2)
+          });
+      }
+      if (f1[i].fTable[0][0] == "W45") {
+        var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() };
+        var fword2 = function (str, i) { return str[i + 4].toLowerCase() + " " + str[i + 5].toLowerCase() + " " + str[i + 6].toLowerCase() + " " + str[i + 7].toLowerCase() + " " + str[i + 8].toLowerCase() };
+        testFC.prob.push(
+          {
+            "number": i,
+            "name": f1[i].name,
+            "prob": getProbW(testFC.textContent, f1[i].fTable, 8, fword1, fword2)
+          });
+      }
+      if (f1[i].fTable[0][0] == "W55") {
+        var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() };
+        var fword2 = function (str, i) { return str[i + 5].toLowerCase() + " " + str[i + 6].toLowerCase() + " " + str[i + 7].toLowerCase() + " " + str[i + 8].toLowerCase() + " " + str[i + 9].toLowerCase() };
+        testFC.prob.push(
+          {
+            "number": i,
+            "name": f1[i].name,
+            "prob": getProbW(testFC.textContent, f1[i].fTable, 9, fword1, fword2)
           });
       }
     }
