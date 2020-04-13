@@ -83,372 +83,21 @@ var myController = myModule.controller("myVitextbiController", [
     }
 
     //--
-
     $scope.buildTable = function (index, code) {
-      var state = null;
       $scope.textFileContents[index].aTable = null;
       $scope.textFileContents[index].fTable = null;
-      switch (code) {
-        case 'C11':
-          state = [['C11']];
-          var fchar1 = function (str, i) { return str.charAt(i) };
-          var fchar2 = function (str, i) { return str.charAt(i + 1); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 1, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'C21':
-          state = [['C21']];
-          var fchar1 = function (str, i) { return str.charAt(i) + str.charAt(i + 1) };
-          var fchar2 = function (str, i) { return str.charAt(i + 2); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 2, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'C31':
-          state = [['C31']];
-          var fchar1 = function (str, i) { return str.charAt(i) + str.charAt(i + 1) + str.charAt(i + 2) };
-          var fchar2 = function (str, i) { return str.charAt(i + 3); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 3, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'C41':
-          state = [['C41']];
-          var fchar1 = function (str, i) { return str.charAt(i) + str.charAt(i + 1) + str.charAt(i + 2) + str.charAt(i + 3) };
-          var fchar2 = function (str, i) { return str.charAt(i + 4); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 4, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'C51':
-          state = [['C51']];
-          var fchar1 = function (str, i) { return str.charAt(i) + str.charAt(i + 1) + str.charAt(i + 2) + str.charAt(i + 3) + str.charAt(i + 4) };
-          var fchar2 = function (str, i) { return str.charAt(i + 5); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 5, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        //--
-        case 'C12':
-          state = [['C12']];
-          var fchar1 = function (str, i) { return str.charAt(i) };
-          var fchar2 = function (str, i) { return str.charAt(i + 1) + str.charAt(i + 2); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 2, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'C22':
-          state = [['C22']];
-          var fchar1 = function (str, i) { return str.charAt(i) + str.charAt(i + 1) };
-          var fchar2 = function (str, i) { return str.charAt(i + 2) + str.charAt(i + 3); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 3, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'C32':
-          state = [['C32']];
-          var fchar1 = function (str, i) { return str.charAt(i) + str.charAt(i + 1) + str.charAt(i + 2) };
-          var fchar2 = function (str, i) { return str.charAt(i + 3) + str.charAt(i + 4); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 4, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'C42':
-          state = [['C42']];
-          var fchar1 = function (str, i) { return str.charAt(i) + str.charAt(i + 1) + str.charAt(i + 2) + str.charAt(i + 3) };
-          var fchar2 = function (str, i) { return str.charAt(i + 4) + str.charAt(i + 5); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 5, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'C52':
-          state = [['C52']];
-          var fchar1 = function (str, i) { return str.charAt(i) + str.charAt(i + 1) + str.charAt(i + 2) + str.charAt(i + 3) + str.charAt(i + 4) };
-          var fchar2 = function (str, i) { return str.charAt(i + 5) + str.charAt(i + 6); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 6, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        //--
-        case 'C13':
-          state = [['C13']];
-          var fchar1 = function (str, i) { return str.charAt(i) };
-          var fchar2 = function (str, i) { return str.charAt(i + 1) + str.charAt(i + 2) + str.charAt(i + 3); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 3, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'C23':
-          state = [['C23']];
-          var fchar1 = function (str, i) { return str.charAt(i) + str.charAt(i + 1) };
-          var fchar2 = function (str, i) { return str.charAt(i + 2) + str.charAt(i + 3) + str.charAt(i + 4); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 4, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'C33':
-          state = [['C33']];
-          var fchar1 = function (str, i) { return str.charAt(i) + str.charAt(i + 1) + str.charAt(i + 2) };
-          var fchar2 = function (str, i) { return str.charAt(i + 3) + str.charAt(i + 4) + str.charAt(i + 5); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 5, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'C43':
-          state = [['C43']];
-          var fchar1 = function (str, i) { return str.charAt(i) + str.charAt(i + 1) + str.charAt(i + 2) + str.charAt(i + 3) };
-          var fchar2 = function (str, i) { return str.charAt(i + 4) + str.charAt(i + 5) + str.charAt(i + 6); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 6, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'C53':
-          state = [['C53']];
-          var fchar1 = function (str, i) { return str.charAt(i) + str.charAt(i + 1) + str.charAt(i + 2) + str.charAt(i + 3) + str.charAt(i + 4) };
-          var fchar2 = function (str, i) { return str.charAt(i + 5) + str.charAt(i + 6) + str.charAt(i + 7); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 7, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        //--
-        case 'C14':
-          state = [['C14']];
-          var fchar1 = function (str, i) { return str.charAt(i) };
-          var fchar2 = function (str, i) { return str.charAt(i + 1) + str.charAt(i + 2) + str.charAt(i + 3) + str.charAt(i + 4); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 4, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'C24':
-          state = [['C24']];
-          var fchar1 = function (str, i) { return str.charAt(i) + str.charAt(i + 1) };
-          var fchar2 = function (str, i) { return str.charAt(i + 2) + str.charAt(i + 3) + str.charAt(i + 4) + str.charAt(i + 5); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 5, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'C34':
-          state = [['C34']];
-          var fchar1 = function (str, i) { return str.charAt(i) + str.charAt(i + 1) + str.charAt(i + 2) };
-          var fchar2 = function (str, i) { return str.charAt(i + 3) + str.charAt(i + 4) + str.charAt(i + 5) + str.charAt(i + 6); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 6, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'C44':
-          state = [['C44']];
-          var fchar1 = function (str, i) { return str.charAt(i) + str.charAt(i + 1) + str.charAt(i + 2) + str.charAt(i + 3) };
-          var fchar2 = function (str, i) { return str.charAt(i + 4) + str.charAt(i + 5) + str.charAt(i + 6) + str.charAt(i + 7); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 7, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'C54':
-          state = [['C54']];
-          var fchar1 = function (str, i) { return str.charAt(i) + str.charAt(i + 1) + str.charAt(i + 2) + str.charAt(i + 3) + str.charAt(i + 4) };
-          var fchar2 = function (str, i) { return str.charAt(i + 5) + str.charAt(i + 6) + str.charAt(i + 7) + str.charAt(i + 8); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 8, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        //--
-        case 'C15':
-          state = [['C15']];
-          var fchar1 = function (str, i) { return str.charAt(i) };
-          var fchar2 = function (str, i) { return str.charAt(i + 1) + str.charAt(i + 2) + str.charAt(i + 3) + str.charAt(i + 4) + str.charAt(i + 5); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 5, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'C25':
-          state = [['C25']];
-          var fchar1 = function (str, i) { return str.charAt(i) + str.charAt(i + 1) };
-          var fchar2 = function (str, i) { return str.charAt(i + 2) + str.charAt(i + 3) + str.charAt(i + 4) + str.charAt(i + 5) + str.charAt(i + 6); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 6, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'C35':
-          state = [['C35']];
-          var fchar1 = function (str, i) { return str.charAt(i) + str.charAt(i + 1) + str.charAt(i + 2) };
-          var fchar2 = function (str, i) { return str.charAt(i + 3) + str.charAt(i + 4) + str.charAt(i + 5) + str.charAt(i + 6) + str.charAt(i + 7); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 7, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'C45':
-          state = [['C45']];
-          var fchar1 = function (str, i) { return str.charAt(i) + str.charAt(i + 1) + str.charAt(i + 2) + str.charAt(i + 3) };
-          var fchar2 = function (str, i) { return str.charAt(i + 4) + str.charAt(i + 5) + str.charAt(i + 6) + str.charAt(i + 7) + str.charAt(i + 8); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 8, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'C55':
-          state = [['C55']];
-          var fchar1 = function (str, i) { return str.charAt(i) + str.charAt(i + 1) + str.charAt(i + 2) + str.charAt(i + 3) + str.charAt(i + 4) };
-          var fchar2 = function (str, i) { return str.charAt(i + 5) + str.charAt(i + 6) + str.charAt(i + 7) + str.charAt(i + 8) + str.charAt(i + 9); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrder($scope.textFileContents[index].textContent, state, 9, fchar1, fchar2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        //--
-        case 'W11':
-          state = [['W11']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 1].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 1, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'W21':
-          state = [['W21']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 2].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 2, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'W31':
-          state = [['W31']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 3].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 3, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'W41':
-          state = [['W41']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 4].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 4, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'W51':
-          state = [['W51']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 5].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 5, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        //--
-        case 'W12':
-          state = [['W12']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 2, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'W22':
-          state = [['W22']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 3, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'W32':
-          state = [['W32']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 4, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'W42':
-          state = [['W42']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 4].toLowerCase() + " " + str[i + 5].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 5, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'W52':
-          state = [['W52']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 5].toLowerCase() + " " + str[i + 6].toLowerCase(); }
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 6, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        //--
-        case 'W13':
-          state = [['W13']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 3, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'W23':
-          state = [['W23']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 4, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'W33':
-          state = [['W33']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() + " " + str[i + 5].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 5, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'W43':
-          state = [['W43']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 4].toLowerCase() + " " + str[i + 5].toLowerCase() + " " + str[i + 6].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 6, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'W53':
-          state = [['W53']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 5].toLowerCase() + " " + str[i + 6].toLowerCase() + " " + str[i + 7].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 7, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        //--
-        case 'W14':
-          state = [['W14']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 4, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'W24':
-          state = [['W24']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() + " " + str[i + 5].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 5, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'W34':
-          state = [['W34']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() + " " + str[i + 5].toLowerCase() + " " + str[i + 6].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 6, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'W44':
-          state = [['W44']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 4].toLowerCase() + " " + str[i + 5].toLowerCase() + " " + str[i + 6].toLowerCase() + " " + str[i + 7].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 7, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'W54':
-          state = [['W54']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 5].toLowerCase() + " " + str[i + 6].toLowerCase() + " " + str[i + 7].toLowerCase() + " " + str[i + 8].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 8, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        //--
-        case 'W15':
-          state = [['W15']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() + str[i + 5].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 5, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'W25':
-          state = [['W25']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() + " " + str[i + 5].toLowerCase() + str[i + 6].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 6, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'W35':
-          state = [['W35']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() + " " + str[i + 5].toLowerCase() + " " + str[i + 6].toLowerCase() + str[i + 7].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 7, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'W45':
-          state = [['W45']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 4].toLowerCase() + " " + str[i + 5].toLowerCase() + " " + str[i + 6].toLowerCase() + " " + str[i + 7].toLowerCase() + str[i + 8].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 8, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
-        case 'W55':
-          state = [['W55']];
-          var fword1 = function (str, i) { return str[i].toLowerCase() + " " + str[i + 1].toLowerCase() + " " + str[i + 2].toLowerCase() + " " + str[i + 3].toLowerCase() + " " + str[i + 4].toLowerCase() };
-          var fword2 = function (str, i) { return str[i + 5].toLowerCase() + " " + str[i + 6].toLowerCase() + " " + str[i + 7].toLowerCase() + " " + str[i + 8].toLowerCase() + str[i + 9].toLowerCase() };
-          $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, state, 9, fword1, fword2);
-          $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
-          break;
+      var num1 = parseInt(code.charAt(1));
+      var num2 = parseInt(code.charAt(2));
+      if (code.charAt(0) == 'C') {
+        var f01 = function (str, i) { return fc(str, i, 0, num1) };           // old notation pre-ES6...
+        var f02 = function (str, i) { return fc(str, i, num1, num1 + num2) };
+        $scope.textFileContents[index].aTable = buildAsoluteGraphOrderC($scope.textFileContents[index].textContent, [[code]], num1 + num2 - 1, f01, f02);
+      } else {
+        var f01 = function (str, i) { return fw(str, i, 0, num1) };
+        var f02 = function (str, i) { return fw(str, i, num1, num1 + num2) };
+        $scope.textFileContents[index].aTable = buildAsoluteGraphOrderW($scope.textFileContents[index].textContent, [[code]], num1 + num2 - 1, f01, f02);
       }
+      $scope.textFileContents[index].fTable = buildFrequencyTable($scope.textFileContents[index].aTable);
       $scope.textFileContents[index].aTable = null;
     }
 
@@ -475,16 +124,20 @@ var myController = myModule.controller("myVitextbiController", [
       if (f1[i].fTable[0][0].charAt(0) == 'C') {
         var f01 = function (str, i) { return fc(str, i, 0, num1) }; // old notation pre-ES6...
         var f02 = function (str, i) { return fc(str, i, num1, num1 + num2) };
+        testFC.prob.push({
+          "number": i,
+          "name": f1[i].name,
+          "prob": getProbC(testFC.textContent, f1[i].fTable, num1 + num2 - 1, f01, f02)
+        });
       } else {
         var f01 = function (str, i) { return fw(str, i, 0, num1) };
         var f02 = function (str, i) { return fw(str, i, num1, num1 + num2) };
+        testFC.prob.push({
+          "number": i,
+          "name": f1[i].name,
+          "prob": getProbW(testFC.textContent, f1[i].fTable, num1 + num2 - 1, f01, f02)
+        });
       }
-      testFC.prob.push({
-        "number": i,
-        "name": f1[i].name,
-        "prob": getProbW(testFC.textContent, f1[i].fTable, num1 + num2 - 1, f01, f02)
-      });
-
     }
 
     $scope.identifyText = function (index) {
@@ -720,10 +373,13 @@ var myController = myModule.controller("myVitextbiController", [
           if (r <= acum) {
             text += statef[0][j];
             if (sp) {
-              var position = findV(statef, text.split(" ").splice(-2).join(" "));
+              var position = findV(statef, text.trim().split(" ").splice(-1 * order).join(" "));
               text += " ";
             } else {
               var position = findV(statef, text.slice(-1 * order));
+            }
+            if (position == 0) {
+              position = randomInt(1, statef.length - 1)
             }
             a = statef[position];
             break;
@@ -733,7 +389,7 @@ var myController = myModule.controller("myVitextbiController", [
       return text;
     }
 
-    function buildAsoluteGraphOrder(str, state, order, fchar1, fchar2) {
+    function buildAsoluteGraphOrderC(str, state, order, fchar1, fchar2) {
       for (var i = 0; i < str.length; i++) {
         if (i < str.length - order) {
           var char1 = fchar1(str, i);
