@@ -1,3 +1,4 @@
 # VITEXTBI
 
-A texts classifier & generator
+[VITEXTBI: A texts classifier & generator](https://rafaelaznar.github.io/vitextbi/ "VITEXTBI")
+
